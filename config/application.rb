@@ -24,5 +24,10 @@ module AppOne
     config.active_record.raise_in_transactional_callbacks = true
     # Required for Heroku
     config.assets.initialize_on_precompile = false
+
+    #for new fonts (in Heroku)
+    config.assets.paths << Rails.root.join('lib', 'assets', 'fonts')
+    config.assets.precompile += %w(.svg .eot .woff .ttf)
+
   end
 end
